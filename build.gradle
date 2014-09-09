@@ -41,12 +41,24 @@ android {
     }
 }
 
-uploadArchives {
-    repositories.mavenDeployer {
-        repository(url: "file:maven-repository/")
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        repository(url: "file:maven-repository/")
+//
+//        pom.groupId = GROUP
+//        pom.artifactId = ARTIFACT_ID
+//        pom.version = VERSION
+//    }
+//}
 
-        pom.groupId = GROUP
-        pom.artifactId = ARTIFACT_ID
-        pom.version = VERSION
+uploadArchives {
+
+    repositories {
+
+        mavenDeployer {
+
+            repository(url: mavenLocal().url)
+
+        }
     }
 }
