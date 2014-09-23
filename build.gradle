@@ -21,7 +21,7 @@ version = VERSION
 group = GROUP
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:19.+'
 }
 
 android {
