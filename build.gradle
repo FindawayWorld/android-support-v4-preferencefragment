@@ -1,6 +1,10 @@
-defaultTasks = ['clean', 'assembleDebug', 'check', 'uploadArchives']
-
+defaultTasks = ['clean', 'assemble', 'check', 'uploadArchives']
 apply plugin: 'android-sdk-manager'
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+version = VERSION
+group = GROUP
 
 buildscript {
     repositories {
@@ -10,15 +14,14 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:0.12.+'
-	classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.0'
     }
 }
 
-apply plugin: 'com.android.library'
-apply plugin: 'maven'
-
-version = VERSION
-group = GROUP
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
 
 dependencies {
     compile 'com.android.support:support-v4:19.+'
