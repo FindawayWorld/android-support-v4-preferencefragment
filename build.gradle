@@ -1,3 +1,4 @@
+defaultTasks = ['clean', 'assembleDebug', 'check', 'uploadArchives']
 
 apply plugin: 'android-sdk-manager'
 
